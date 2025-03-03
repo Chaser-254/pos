@@ -9,7 +9,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-504x&av9c7f3w2+ib5u9g2)w7+
 
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = ["eve-pos-926d4500456b.herokuapp.com", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ['eve-pos-926d4500456b.herokuapp.com', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
