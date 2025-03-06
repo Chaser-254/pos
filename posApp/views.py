@@ -60,15 +60,16 @@ def home(request):
         date_added__day = current_day
     ).all()
     total_sales = sum(today_sales.values_list('grand_total',flat=True))
+    sales = Sales.objects.all()
     context = {
         'page_title':'Home',
         'categories' : categories,
         'products' : products,
         'transaction' : transaction,
         'total_sales' : total_sales,
+        'sales' : sales,
     }
     return render(request, 'posApp/home.html',context)
-
 
 def about(request):
     context = {
