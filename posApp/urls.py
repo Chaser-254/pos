@@ -5,8 +5,9 @@ from django.urls import path
 from django.views.generic.base import RedirectView
 
 urlpatterns = [
-    path('', views.home, name="home-page"),
+    path('', views.home, name="home"), # Add this line
     path('redirect-admin', RedirectView.as_view(url="/admin"),name="redirect-admin"),
+    path('home/', views.home, name="home"),
     path('login', auth_views.LoginView.as_view(template_name = 'posApp/login.html',redirect_authenticated_user=True), name="login"),
     path('userlogin', views.login_user, name="login-user"),
     path('logout', views.logoutuser, name="logout"),
@@ -30,5 +31,4 @@ urlpatterns = [
     # path('save_employee', views.save_employee, name="save-employee-page"),
     # path('delete_employee', views.delete_employee, name="delete-employee"),
     # path('view_employee', views.view_employee, name="view-employee-page"),
- 
 ]
